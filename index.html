@@ -1,0 +1,41 @@
+<html>
+ <head>
+  <title>/r/aznidentity Topic Generator</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ </head>
+
+ <body>
+  <div align="center">
+
+   <h1>/r/aznidentity Topic Generator</h1>
+   by <i><a target="_blank" href="https://reddit.com/u/Okynrom">Okynrom</a></i>  (&copy; &reg; &trade;)
+    <br /><br /><br />
+   <input type="text" id="result" name="result" size="100" style="text-align:center;font-size:large;" readonly></p>
+
+
+  <script>
+   function choose(array) {
+     return array[Math.floor(Math.random() * (array.length))];
+   }
+   function generate() {
+     let quals = ["creepy","exhibitionist","unemployed","pedophile","bald","unattractive","old","satanist","fetishizing","racist","convicted"];
+     let nouns = ["guy","dude","douche","sexpat","supremacist","nationalist","neo-nazi","Trump supporter","KKK member","incel","neckbeard"];
+     let verbs = ["spits on","throws a rock into","yells racist slurs at","shows his wiener in front of","says Ching Chong in front of","takes a dump in front of","goes full Elliot Rodger towards","pulls a gun before","slants his eyes in front of","brings his mail order wife to","lets his 'private' phone number to","defends his sticky rice preference to","brings his WMAF son to","alludes to COVID-19 in front of"];
+     let targs = ["store","guy in the street","grandmother in an armchair","activist","schoolboy","schoolgirl","demonstration for equal rights","LGBT gathering","ladyboy","journalist"];
+     //
+     let qual = choose(quals); qual = qual.charAt(0).toUpperCase() + qual.slice(1); 
+     let noun = choose(nouns);
+     let verb = choose(verbs);
+     let targ = choose(targs);
+     //
+     let result = qual + ' White ' + noun + ' ' + verb + ' Asian ' + targ;
+     document.getElementById("result").value = result;
+   }
+  </script>
+
+  <button onclick="generate()">Generate again!</button>
+
+  </div>
+ </body>
+
+</html>
