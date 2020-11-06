@@ -11,7 +11,7 @@
    <h1>/r/aznidentity Topic Generator</h1>
    by <i><a target="_blank" href="https://reddit.com/u/Okynrom">Okynrom</a></i>  (&copy; &reg; &trade;)
     <br /><br /><br />
-   <input type="text" id="result" name="result" size="100" style="text-align:center;font-size:large;" readonly></p>
+   <input type="text" id="result" name="result" size="2" style="text-align:center;font-size:large;" readonly></p>
 
 
   <script>
@@ -30,6 +30,7 @@
      let targ = choose(targs);
      //
      let result = qual + ' White ' + noun + ' ' + verb + ' Asian ' + targ;
+     document.getElementById("result").size = result.length + 2;
      document.getElementById("result").value = result;
    }
   </script>
