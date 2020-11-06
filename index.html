@@ -1,20 +1,36 @@
 <html>
  <head>
   <title>/r/aznidentity Topic Generator</title>
+
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <style>   <!-- 1st line for IE10+, 2nd for Gecko, 3nd for Blink -->
+   textarea { -ms-overflow-style: none; }
+   textarea { overflow: -moz-scrollbars-none; }
+   textarea::-webkit-scrollbar { display:none; width: 0 }
+  </style>
  </head>
+
 
  <body onload="generate()">
   <div align="center">
 
    <h1>/r/aznidentity<br /> Topic Generator</h1>
    by <i><a target="_blank" href="https://reddit.com/u/Okynrom">Okynrom</a></i>  (&copy; &reg; &trade;)
-    <br /><br /><br />
-   <input type="text" id="result" name="result" size="60" style="text-align:center;font-size:large;" readonly></p>
+   <br /><br />
+   <p>
+    <script type="text/javascript">
+     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+     if (!isMobile)
+      document.write( "<input type=\"text\" id=\"result\" name=\"result\" size=\"60\" style=\"text-align:center;font-size:large;\" readonly>" );
+     else
+      document.write( "<textarea id=\"result\" name=\"result\" cols=\"40\" rows=\"2\" wrap=\"hard\" style=\"text-align:center;font-family:inherit;font-size:large;resize:none;\" readonly></textarea>" );
+    </script>
+   </p>
 
 
-  <script>
+  <script type="text/javascript">
    function choose(array) {
      return array[Math.floor(Math.random() * (array.length))];
    }
@@ -30,10 +46,8 @@
      let targ = choose(targs);
      //
      let result = qual + ' White ' + noun + ' ' + verb + ' Asian ' + targ;
-     if (result.length > 58)
+     if (!isMobile)
        document.getElementById("result").size = result.length + 2;
-     else
-       document.getElementById("result").size = 60;
      document.getElementById("result").value = result;
    }
   </script>
@@ -42,5 +56,6 @@
 
   </div>
  </body>
+
 
 </html>
